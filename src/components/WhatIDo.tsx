@@ -2,6 +2,30 @@ import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const CATEGORIES = [
+  {
+    title: "MODEL DEVELOPMENT",
+    subtitle: "Working With Models, Not Just Training Them",
+    description:
+      "Working with ML and GenAI models, evaluation, experimentation, and the practical problems that appear between a model that works and a model that is actually useful.",
+    tags: ["ML models", "GenAI", "Evaluation", "Experimentation"],
+  },
+  {
+    title: "DATA & RETRIEVAL",
+    subtitle: "Context Is Half The Answer",
+    description:
+      "Building retrieval pipelines and RAG systems where the quality of the context matters as much as the model generating the answer.",
+    tags: ["RAG", "Retrieval pipelines", "pgvector", "Agents"],
+  },
+  {
+    title: "SYSTEMS & INFRASTRUCTURE",
+    subtitle: "The Unglamorous Part That Decides Everything",
+    description:
+      "Serving models, working with GPUs, containers, inference runtimes, CUDA, and the less glamorous parts that determine whether an AI system is actually usable.",
+    tags: ["CUDA", "vLLM", "Docker", "Redis"],
+  },
+];
+
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
   const setRef = (el: HTMLDivElement | null, index: number) => {
@@ -28,10 +52,7 @@ const WhatIDo = () => {
     <div className="whatIDO">
       <div className="what-box">
         <h2 className="title">
-          W<span className="hat-h2">HAT</span>
-          <div>
-            I<span className="do-h2"> DO</span>
-          </div>
+          W<span className="hat-h2">HAT</span> I<span className="do-h2"> DO</span>
         </h2>
       </div>
       <div className="what-box">
@@ -58,91 +79,52 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
+          {CATEGORIES.map((category, index) => (
+            <div
+              className="what-content what-noTouch"
+              key={category.title}
+              ref={(el) => setRef(el, index)}
+            >
+              <div className="what-border1">
+                <svg height="100%">
+                  <line
+                    x1="0"
+                    y1="0"
+                    x2="100%"
+                    y2="0"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeDasharray="6,6"
+                  />
+                  <line
+                    x1="0"
+                    y1="100%"
+                    x2="100%"
+                    y2="100%"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeDasharray="6,6"
+                  />
+                </svg>
+              </div>
+              <div className="what-corner"></div>
 
-            <div className="what-content-in">
-              <h3>AI & AUTOMATION</h3>
-              <h4>Workflow Intelligence for Organizations</h4>
-              <p>
-                AI specialist helping organizations automate workflows—internal ops
-                and customer-facing—so teams ship faster with less manual work.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">LLMs &amp; agents</div>
-                <div className="what-tags">Workflow design</div>
-                <div className="what-tags">RAG &amp; retrieval</div>
-                <div className="what-tags">Evals &amp; guardrails</div>
-                <div className="what-tags">Integrations</div>
-                <div className="what-tags">Product strategy</div>
+              <div className="what-content-in">
+                <h3>{category.title}</h3>
+                <h4>{category.subtitle}</h4>
+                <p>{category.description}</p>
+                <h5>Skillset & tools</h5>
+                <div className="what-content-flex">
+                  {category.tags.map((tag) => (
+                    <div className="what-tags" key={tag}>
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+                <div className="what-arrow"></div>
               </div>
-              <div className="what-arrow"></div>
             </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>BUILD &amp; SCALE</h3>
-              <h4>Shipping AI in Production</h4>
-              <p>
-                I build the systems behind it: APIs, data, voice/real-time, and
-                full-stack products—production-ready, not slide decks.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Python</div>
-                <div className="what-tags">REST &amp; real-time APIs</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Cloud &amp; infra</div>
-              </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

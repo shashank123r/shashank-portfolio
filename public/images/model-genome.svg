@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <pattern id="grid-mg" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2b241c" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#18140f"/>
+  <rect width="800" height="450" fill="url(#grid-mg)"/>
+
+  <path d="M24 8 H8 V24" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M776 442 H792 V426" fill="none" stroke="#f59e0b" stroke-width="2"/>
+
+  <!-- double-helix motif -->
+  <g stroke="#334155" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M120 90 C 220 150, 220 210, 120 270 S 20 390, 120 450"/>
+    <path d="M120 90 C 20 150, 20 210, 120 270 S 220 390, 120 450"/>
+  </g>
+
+  <g font-family="monospace">
+    <text x="240" y="130" font-size="16" fill="#ffffff" opacity="0.9">781 passing</text>
+    <text x="240" y="154" font-size="13" fill="#f59e0b" opacity="0.9">1 skipped</text>
+  </g>
+
+  <!-- test-suite grid: mostly passing cells, one skipped -->
+  <g transform="translate(240,180)" fill="#8a8072" opacity="0.85">
+    <rect x="0" y="0" width="16" height="16" rx="2"/><rect x="22" y="0" width="16" height="16" rx="2"/><rect x="44" y="0" width="16" height="16" rx="2"/><rect x="66" y="0" width="16" height="16" rx="2"/><rect x="88" y="0" width="16" height="16" rx="2"/><rect x="110" y="0" width="16" height="16" rx="2"/><rect x="132" y="0" width="16" height="16" rx="2"/><rect x="154" y="0" width="16" height="16" rx="2"/><rect x="176" y="0" width="16" height="16" rx="2"/><rect x="198" y="0" width="16" height="16" rx="2"/><rect x="220" y="0" width="16" height="16" rx="2"/><rect x="242" y="0" width="16" height="16" rx="2"/><rect x="264" y="0" width="16" height="16" rx="2"/><rect x="286" y="0" width="16" height="16" rx="2"/><rect x="308" y="0" width="16" height="16" rx="2"/><rect x="330" y="0" width="16" height="16" rx="2"/>
+    <rect x="0" y="22" width="16" height="16" rx="2"/><rect x="22" y="22" width="16" height="16" rx="2"/><rect x="44" y="22" width="16" height="16" rx="2"/><rect x="66" y="22" width="16" height="16" rx="2"/><rect x="88" y="22" width="16" height="16" rx="2"/><rect x="110" y="22" width="16" height="16" rx="2"/><rect x="132" y="22" width="16" height="16" rx="2"/><rect x="154" y="22" width="16" height="16" rx="2"/><rect x="176" y="22" width="16" height="16" rx="2"/><rect x="198" y="22" width="16" height="16" rx="2"/><rect x="220" y="22" width="16" height="16" rx="2"/><rect x="242" y="22" width="16" height="16" rx="2"/><rect x="264" y="22" width="16" height="16" rx="2"/><rect x="286" y="22" width="16" height="16" rx="2"/><rect x="308" y="22" width="16" height="16" rx="2"/><rect x="330" y="22" width="16" height="16" rx="2"/>
+    <rect x="0" y="44" width="16" height="16" rx="2"/><rect x="22" y="44" width="16" height="16" rx="2"/><rect x="44" y="44" width="16" height="16" rx="2"/><rect x="66" y="44" width="16" height="16" rx="2"/><rect x="88" y="44" width="16" height="16" rx="2"/><rect x="110" y="44" width="16" height="16" rx="2"/><rect x="132" y="44" width="16" height="16" rx="2"/><rect x="154" y="44" width="16" height="16" rx="2"/><rect x="176" y="44" width="16" height="16" rx="2"/><rect x="198" y="44" width="16" height="16" rx="2"/><rect x="220" y="44" width="16" height="16" rx="2"/><rect x="242" y="44" width="16" height="16" rx="2"/><rect x="264" y="44" width="16" height="16" rx="2"/><rect x="286" y="44" width="16" height="16" rx="2"/><rect x="308" y="44" width="16" height="16" rx="2"/><rect x="330" y="44" width="16" height="16" rx="2"/>
+    <rect x="0" y="66" width="16" height="16" rx="2"/><rect x="22" y="66" width="16" height="16" rx="2"/><rect x="44" y="66" width="16" height="16" rx="2"/><rect x="66" y="66" width="16" height="16" rx="2"/><rect x="88" y="66" width="16" height="16" rx="2"/><rect x="110" y="66" width="16" height="16" rx="2" fill="#f59e0b"/><rect x="132" y="66" width="16" height="16" rx="2"/><rect x="154" y="66" width="16" height="16" rx="2"/><rect x="176" y="66" width="16" height="16" rx="2"/><rect x="198" y="66" width="16" height="16" rx="2"/><rect x="220" y="66" width="16" height="16" rx="2"/><rect x="242" y="66" width="16" height="16" rx="2"/><rect x="264" y="66" width="16" height="16" rx="2"/><rect x="286" y="66" width="16" height="16" rx="2"/><rect x="308" y="66" width="16" height="16" rx="2"/><rect x="330" y="66" width="16" height="16" rx="2"/>
+  </g>
+
+  <text x="660" y="410" text-anchor="end" font-family="monospace" font-size="14" fill="#f59e0b" opacity="0.7">EVALUATE // VERIFY // TRUST</text>
+</svg>

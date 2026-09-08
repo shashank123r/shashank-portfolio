@@ -2,7 +2,7 @@
   display: flex;
   max-width: var(--cMaxWidth);
   width: var(--cWidth);
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 20px 0px;
   margin-bottom: -100px;
   box-sizing: border-box;
@@ -40,11 +40,6 @@
   letter-spacing: 1px;
   font-weight: 500;
 }
-.navbar-title {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-}
 @media only screen and (min-width: 500px) {
   .header {
     padding: 20px 0px;
@@ -56,9 +51,6 @@
   }
   .header ul li {
     color: #eae5ec;
-  }
-  .navbar-title {
-    font-size: 16px;
   }
 }
 @media only screen and (min-width: 900px) {
@@ -76,8 +68,5 @@
   }
   .navbar-connect {
     font-size: 16px;
-  }
-  .navbar-title {
-    font-size: 18px;
   }
 }

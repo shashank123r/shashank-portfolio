@@ -11,18 +11,37 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-const textureLoader = new THREE.TextureLoader();
-const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+const techStack = [
+  { name: "Python", color: "#3776AB", text: "#FFD43B" },
+  { name: "RAG", color: "#6C5CE7", text: "#ffffff" },
+  { name: "Agents", color: "#00B8A9", text: "#ffffff" },
+  { name: "pgvector", color: "#336791", text: "#ffffff" },
+  { name: "Redis", color: "#DC382D", text: "#ffffff" },
+  { name: "Docker", color: "#2496ED", text: "#ffffff" },
+  { name: "CUDA", color: "#1A1A1A", text: "#76B900" },
+  { name: "vLLM", color: "#FF6B35", text: "#ffffff" },
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+
+function makeTextTexture(label: string, bgColor: string, textColor: string) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 256;
+  canvas.height = 256;
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = bgColor;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = textColor;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  const fontSize = label.length > 8 ? 32 : 40;
+  ctx.font = `600 ${fontSize}px "Geist", sans-serif`;
+  ctx.fillText(label, canvas.width / 2, canvas.height / 2);
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.needsUpdate = true;
+  return texture;
+}
+
+const textures = techStack.map((t) => makeTextTexture(t.name, t.color, t.text));
+const emissiveColors = techStack.map((t) => new THREE.Color(t.color));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -153,10 +172,10 @@ const TechStack = () => {
   }, []);
   const materials = useMemo(() => {
     return textures.map(
-      (texture) =>
+      (texture, i) =>
         new THREE.MeshPhysicalMaterial({
           map: texture,
-          emissive: "#ffffff",
+          emissive: emissiveColors[i],
           emissiveMap: texture,
           emissiveIntensity: 0.3,
           metalness: 0.5,
@@ -204,7 +223,7 @@ const TechStack = () => {
           environmentRotation={[0, 4, 2]}
         />
         <EffectComposer enableNormalPass={false}>
-          <N8AO color="#0f002c" aoRadius={2} intensity={1.15} />
+          <N8AO color="#140f0a" aoRadius={2} intensity={1.15} />
         </EffectComposer>
       </Canvas>
     </div>

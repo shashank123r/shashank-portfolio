@@ -3,7 +3,7 @@
   width: 100vw;
   height: var(--vh);
   /* background-image: linear-gradient(#cbb1ff, #d8c4ff); */
-  background-color: #e0f2f1;
+  background-color: #fdf0dd;
   z-index: 999999999;
   display: flex;
   place-items: center;
@@ -77,7 +77,7 @@
 }
 
 .loading-hover {
-  background-color: #2dd4bf;
+  background-color: #f59e0b;
   width: 250px;
   height: 120px;
   position: absolute;
@@ -204,19 +204,13 @@
   position: fixed;
   z-index: 9999999999;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   box-sizing: border-box;
   padding: 20px 0px;
   left: 50%;
   transform: translateX(-50%);
   top: 0;
   color: var(--backgroundColor);
-}
-
-.loader-title {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
 }
 
 @keyframes blink {
@@ -304,7 +298,7 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #2dd4bf;
+  background-color: #f59e0b;
   animation: ball25 7s infinite;
   transform: translateY(10px);
   animation-timing-function: cubic-bezier(0.3, 1.18, 0.63, 1.28);
@@ -396,18 +390,10 @@
   .loading-header {
     padding: 20px 0px;
   }
-
-  .loader-title {
-    font-size: 16px;
-  }
 }
 
 @media only screen and (min-width: 1200px) {
   .loading-header {
     padding: 35px 0px;
-  }
-
-  .loader-title {
-    font-size: 18px;
   }
 }

@@ -33,14 +33,17 @@ const setCharacter = (
                 const mesh = child as THREE.Mesh;
 
                 // Change clothing colors to match site theme
+                // Note: GLTFLoader strips dots from node names, and the
+                // shirt mesh (Cube006 / Cube006_1) is nested one level
+                // under a "BODYSHIRT" group, not a mesh itself.
                 if (mesh.material) {
-                  if (mesh.name === "BODY.SHIRT") { // The shirt mesh
+                  if (mesh.parent?.name === "BODYSHIRT") {
                     const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    newMat.color = new THREE.Color("#8B4513");
+                    newMat.color = new THREE.Color("#3f5142");
                     mesh.material = newMat;
                   } else if (mesh.name === "Pant") {
                     const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    newMat.color = new THREE.Color("#000000");
+                    newMat.color = new THREE.Color("#221c17");
                     mesh.material = newMat;
                   }
                 }

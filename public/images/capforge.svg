@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <pattern id="grid-cf" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2b241c" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#18140f"/>
+  <rect width="800" height="450" fill="url(#grid-cf)"/>
+
+  <!-- corner ticks -->
+  <path d="M24 8 H8 V24" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M776 442 H792 V426" fill="none" stroke="#f59e0b" stroke-width="2"/>
+
+  <!-- pipeline / build-chain motif -->
+  <g stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.9">
+    <line x1="140" y1="225" x2="270" y2="150" stroke-dasharray="6,6"/>
+    <line x1="270" y1="150" x2="400" y2="225" stroke-dasharray="6,6"/>
+    <line x1="400" y1="225" x2="530" y2="150" stroke-dasharray="6,6"/>
+    <line x1="530" y1="150" x2="660" y2="225" stroke-dasharray="6,6"/>
+  </g>
+
+  <rect x="112" y="197" width="56" height="56" rx="6" fill="#18140f" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="270" cy="150" r="30" fill="#18140f" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="372" y="197" width="56" height="56" rx="28" fill="#18140f" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="530,116 564,150 530,184 496,150" fill="#18140f" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="632" y="197" width="56" height="56" rx="6" fill="#18140f" stroke="#ffffff" stroke-width="2"/>
+
+  <text x="660" y="330" text-anchor="end" font-family="monospace" font-size="14" fill="#f59e0b" opacity="0.7">BUILD // ENGINEER // SHIP</text>
+</svg>

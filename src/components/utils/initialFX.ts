@@ -7,7 +7,7 @@ export function initialFX() {
   smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
   gsap.to("body", {
-    backgroundColor: "#0a0e17",
+    backgroundColor: "#18140f",
     duration: 0.5,
     delay: 1,
   });
@@ -29,7 +29,7 @@ export function initialFX() {
       ease: "power3.inOut",
       y: 0,
       stagger: 0.025,
-      delay: 0.3,
+      delay: 0,
     }
   );
 
@@ -46,7 +46,7 @@ export function initialFX() {
       ease: "power3.inOut",
       y: 0,
       stagger: 0.025,
-      delay: 0.3,
+      delay: 0,
     }
   );
 

@@ -9,20 +9,26 @@ const Landing = ({ children }: PropsWithChildren) => {
           <div className="landing-intro">
             <h2>Hello! I'm</h2>
             <h1>
-              AKASH
-              <br />
-              <span>MALHOTRA</span>
+              SHASHANK <span>R.</span>
             </h1>
+            <p className="landing-tagline">
+              I build AI systems that have to work outside the notebook.
+            </p>
+            <p className="landing-subtext">
+              I work across models, data, inference, and the systems around
+              them, from RAG and agentic workflows to model optimization,
+              computer vision, and AI infrastructure.
+            </p>
           </div>
           <div className="landing-info">
-            <h3>Co-Founder &</h3>
+            <h3>AI / ML</h3>
             <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Tech</div>
-              <div className="landing-h2-2">Business</div>
+              <div className="landing-h2-1">Engineer</div>
+              <div className="landing-h2-2">Engineer</div>
             </h2>
             <h2>
-              <div className="landing-h2-info">Business</div>
-              <div className="landing-h2-info-1">Tech</div>
+              <div className="landing-h2-info">Engineer</div>
+              <div className="landing-h2-info-1">Engineer</div>
             </h2>
           </div>
         </div>

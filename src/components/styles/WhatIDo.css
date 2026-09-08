@@ -19,10 +19,11 @@
   z-index: 9;
 }
 .what-box h2 {
-  font-size: calc(4vw + 25px);
-  line-height: calc(4vw + 20px);
+  font-size: calc(3vw + 20px);
+  line-height: calc(3vw + 18px);
   font-weight: 600;
-  margin-right: 10%;
+  white-space: nowrap;
+  margin-right: 30%;
   margin-bottom: 100px;
 }
 
@@ -34,44 +35,46 @@
 }
 .what-box-in {
   flex-direction: column;
-  height: 500px;
+  height: 640px;
   margin-left: 200px;
   position: relative;
   display: none;
 }
 .what-content {
   width: 450px;
-  height: 33%;
-  min-height: 50%;
+  height: 33.33%;
   transition: 0.5s;
   /* border: 0.5px dashed rgba(255, 255, 255, 0.3); */
   position: relative;
   padding: 50px;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .what-noTouch:hover,
 .what-content-active {
-  min-height: 67%;
-  padding: 40px 50px;
+  height: 62%;
+  padding: 30px 50px;
 }
 
 .what-noTouch:hover ~ .what-content,
 .what-box-in:hover .what-noTouch:not(:hover),
 .what-content.what-sibling {
-  min-height: 33%;
+  height: 17%;
   padding: 10px 50px;
 }
 .what-content h3 {
   font-size: 35px;
+  line-height: 1.15;
   letter-spacing: 1px;
   margin: 0;
 }
 .what-content p {
   font-size: 14px;
-  line-height: 18px;
+  line-height: 17px;
   font-weight: 200;
   letter-spacing: 0.7px;
+  margin: 8px 0 0;
 }
 .what-content h4 {
   font-weight: 300;
@@ -252,27 +255,35 @@
     height: 400px;
   }
   .what-content h3 {
-    font-size: 28px;
+    font-size: 24px;
   }
   .what-content {
     padding: 30px;
     width: 400px;
   }
   .what-content p {
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 6px 0 0;
+  }
+  .what-content-in h5 {
+    margin-bottom: 3px;
   }
   .what-noTouch:hover,
   .what-content-active {
-    padding: 20px 30px;
+    height: 68%;
+    padding: 14px 30px;
   }
 
   .what-noTouch:hover ~ .what-content,
   .what-box-in:hover .what-noTouch:not(:hover),
   .what-content.what-sibling {
-    padding: 10px 30px;
+    height: 16%;
+    padding: 6px 30px;
   }
   .what-tags {
-    font-size: 12px;
+    font-size: 11px;
+    padding: 1px 6px;
   }
 }
 @media only screen and (max-width: 1400px) {
@@ -302,7 +313,7 @@
   }
   .what-noTouch:hover,
   .what-content-active {
-    min-height: 67%;
+    min-height: 55%;
     padding: 50px;
   }
 

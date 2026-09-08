@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <pattern id="grid-rag" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2b241c" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#18140f"/>
+  <rect width="800" height="450" fill="url(#grid-rag)"/>
+
+  <path d="M24 8 H8 V24" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M776 442 H792 V426" fill="none" stroke="#f59e0b" stroke-width="2"/>
+
+  <!-- vector store (pgvector) -->
+  <g stroke="#f59e0b" stroke-width="2" fill="#18140f">
+    <ellipse cx="400" cy="150" rx="70" ry="20"/>
+    <path d="M330 150 V255 A70 20 0 0 0 470 255 V150" fill="#18140f"/>
+    <ellipse cx="400" cy="255" rx="70" ry="20" fill="none"/>
+  </g>
+  <text x="400" y="160" text-anchor="middle" font-family="monospace" font-size="12" fill="#f59e0b">pgvector</text>
+
+  <!-- agent nodes retrieving context -->
+  <g stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,5" fill="none" opacity="0.85">
+    <line x1="400" y1="150" x2="150" y2="330"/>
+    <line x1="400" y1="150" x2="330" y2="360"/>
+    <line x1="400" y1="150" x2="480" y2="360"/>
+    <line x1="400" y1="150" x2="650" y2="330"/>
+  </g>
+
+  <circle cx="150" cy="330" r="22" fill="#18140f" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="330" cy="360" r="22" fill="#18140f" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="480" cy="360" r="22" fill="#18140f" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="650" cy="330" r="22" fill="#18140f" stroke="#ffffff" stroke-width="2"/>
+
+  <text x="660" y="60" text-anchor="end" font-family="monospace" font-size="14" fill="#f59e0b" opacity="0.7">RETRIEVE // REASON // ACT</text>
+</svg>
