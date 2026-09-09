@@ -4,7 +4,7 @@ Personal 3D portfolio for Shashank R., an AI/ML engineer. Built with React, Type
 Three.js, React Three Fiber, and GSAP. It includes animated page sections, a 3D character
 scene, a custom trail cursor, and scroll-driven transitions.
 
-Live site: [https://3d-portfolio-pi-bay.vercel.app](https://3d-portfolio-pi-bay.vercel.app)
+Live site: [https://shashankr-portfolio.vercel.app](https://shashankr-portfolio.vercel.app)
 
 ![Portfolio Preview](public/images/preview.jpg)
 
