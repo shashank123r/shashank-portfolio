@@ -1,10 +1,12 @@
 # 3D Portfolio Website
 
-This repository contains the source code for a personal 3D portfolio built with React, TypeScript, Three.js, React Three Fiber, and GSAP. It includes animated page sections, a character scene, custom cursor interactions, and smooth transitions designed for a modern portfolio experience.
+Personal 3D portfolio for Shashank R., an AI/ML engineer. Built with React, TypeScript,
+Three.js, React Three Fiber, and GSAP. It includes animated page sections, a 3D character
+scene, a custom trail cursor, and scroll-driven transitions.
 
-Live site: [https://akashrmalhotra.netlify.app/](https://akashrmalhotra.netlify.app/)
+Live site: [https://3d-portfolio-pi-bay.vercel.app](https://3d-portfolio-pi-bay.vercel.app)
 
-![Portfolio Preview](public/images/preview1.png)
+![Portfolio Preview](public/images/preview.jpg)
 
 ## Table of Contents
 
@@ -21,11 +23,16 @@ Live site: [https://akashrmalhotra.netlify.app/](https://akashrmalhotra.netlify.
 
 ## Features
 
-- Responsive one-page portfolio layout with reusable section components.
-- 3D character scene rendering powered by React Three Fiber and Three.js.
-- GSAP-powered animations and transitions for interactive storytelling.
-- Custom cursor, hover interactions, and scroll-driven visual effects.
-- Organized component architecture with dedicated utilities and style modules.
+- Responsive one-page portfolio layout with reusable section components (About, Work,
+  Career, Tech Stack, Contact).
+- 3D character scene rendering powered by React Three Fiber and Three.js, with a
+  password-decrypted, DRACO-compressed glTF character model.
+- GSAP-powered scroll choreography (`ScrollTrigger`, `ScrollSmoother`) and text reveal
+  animations (`SplitText`).
+- Custom canvas-based comet-trail cursor that inverts colors over content
+  (`mix-blend-mode: difference`) and hides over interactive elements.
+- Project carousel with real case studies, tool lists, and GitHub links.
+- Downloadable resume linked from the Contact section.
 
 ## Tech Stack
 
@@ -53,25 +60,31 @@ Live site: [https://akashrmalhotra.netlify.app/](https://akashrmalhotra.netlify.
 
 ## Project Structure
 
-```text
+```
 .
-├── public/                    # Static assets
+├── public/                    # Static assets (resume PDF, project images, draco/model files)
 ├── src/
 │   ├── assets/                # Local media/assets
 │   ├── components/
-│   │   ├── Character/         # 3D scene + character logic/utilities
-│   │   ├── styles/            # Section/component CSS files
+│   │   ├── Character/         # 3D scene + character load/animation/lighting utilities
+│   │   ├── styles/             # Section/component CSS files
+│   │   ├── utils/              # GSAP scroll timelines, intro FX
 │   │   ├── About.tsx
 │   │   ├── Career.tsx
 │   │   ├── Contact.tsx
+│   │   ├── Cursor.tsx          # Custom trail cursor
+│   │   ├── HoverLinks.tsx
 │   │   ├── Landing.tsx
-│   │   ├── MainContainer.tsx  # Main page composition
+│   │   ├── Loading.tsx
+│   │   ├── MainContainer.tsx   # Main page composition
 │   │   ├── Navbar.tsx
 │   │   ├── TechStack.tsx
 │   │   ├── WhatIDo.tsx
-│   │   └── Work.tsx
-│   ├── context/               # Global providers (loading state, etc.)
-│   ├── data/                  # Static data/content definitions
+│   │   ├── Work.tsx
+│   │   └── WorkImage.tsx
+│   ├── context/                # Loading state provider
+│   ├── data/                   # Character bone-name data for animation
+│   ├── types/                  # Local type declarations (e.g. GSAP SplitText)
 │   ├── App.tsx
 │   └── main.tsx
 ├── package.json
@@ -87,90 +100,106 @@ Live site: [https://akashrmalhotra.netlify.app/](https://akashrmalhotra.netlify.
 
 ### Installation
 
-1. Clone the repository:
+Clone the repository:
 
-   ```bash
-   git clone <your-repository-url>
-   cd 3d-portfolio
-   ```
+```bash
+git clone https://github.com/shashank123r/shashank-portfolio.git
+cd shashank-portfolio
+```
 
-2. Install dependencies:
+Install dependencies:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-3. Start the local development server:
+Start the local development server:
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
-4. Open the URL shown in the terminal (typically `http://localhost:5173`).
+Open the URL shown in the terminal (typically http://localhost:5173).
 
 ## Available Scripts
 
-- `npm run dev`  
-  Starts Vite dev server and exposes host for local network testing.
+**`npm run dev`**
+Starts Vite dev server and exposes host for local network testing.
 
-- `npm run build`  
-  Type-checks and builds a production-ready bundle.
+**`npm run build`**
+Type-checks and builds a production-ready bundle.
 
-- `npm run preview`  
-  Serves the production build locally for verification.
+**`npm run preview`**
+Serves the production build locally for verification.
 
-- `npm run lint`  
-  Runs ESLint checks across the project.
+**`npm run lint`**
+Runs ESLint checks across the project.
 
 ## GSAP License Note
 
-This project uses the standard `gsap` package, including bonus plugins now available in the core package.
+This project uses the standard `gsap` package, which now bundles the previously
+"Club GreenSock" plugins (`SplitText`, `ScrollSmoother`) used here.
 
 - Install dependencies with `npm install`.
-- If migrating from older setups, remove `gsap-trial` from your project.
-
-Read official installation guidance here: [GSAP Installation Docs](https://gsap.com/docs/v3/Installation/)
+- No separate license or `gsap-trial` package is required.
+- Read official installation guidance here: [GSAP Installation Docs](https://gsap.com/docs/v3/Installation)
 
 ## Customization Guide
 
 You can adapt this portfolio to your own profile by updating the following areas:
 
-- **Content sections**: Edit files in `src/components/` such as `About.tsx`, `Career.tsx`, `WhatIDo.tsx`, and `Work.tsx`.
-- **Data source**: Update static values in files under `src/data/`.
-- **Styling**: Modify component styles in `src/components/styles/` and global styles in `src/index.css` / `src/App.css`.
-- **3D scene behavior**: Adjust scene logic in `src/components/Character/` and related utilities.
-- **Animations**: Tweak GSAP utilities under `src/components/utils/`.
+- **Content sections**: Edit files in `src/components/` such as `About.tsx`, `Career.tsx`,
+  `WhatIDo.tsx`, and `Work.tsx` (project entries, descriptions, and GitHub links).
+- **Resume**: Replace `public/Shashank_R_Resume.pdf` and update the link in `Contact.tsx`.
+- **Theme colors**: Update the CSS custom properties (`--accentColor`, `--backgroundColor`)
+  in `src/index.css`, and keep hardcoded duplicates in sync (GSAP color tweens in
+  `src/components/utils/initialFX.ts` and `GsapScroll.ts`, light colors in
+  `Character/utils/lighting.ts`, SVG assets in `public/images/`).
+- **3D scene behavior**: Adjust scene, character, and lighting logic in
+  `src/components/Character/`.
+- **Cursor**: Tune trail length/easing in `src/components/Cursor.tsx`.
+- **Animations**: Tweak GSAP timelines under `src/components/utils/`.
 
 ## Troubleshooting
 
-- **Blank screen in development**  
-  Check browser console for module import errors and verify all dependencies are installed.
+**Blank screen in development**
+Check browser console for module import errors and verify all dependencies are installed.
 
-- **3D performance issues on low-end devices**  
-  Reduce scene complexity and post-processing effects in the character/scene utilities.
+**3D performance issues on low-end devices**
+Reduce scene complexity and post-processing effects in the character/scene utilities.
 
-- **GSAP plugin errors**  
-  Ensure you have the correct plugin package and license configuration for your target environment.
+**GSAP plugin errors**
+Confirm you're on a recent `gsap` version (`^3.12`) — no separate license is needed for
+the plugins used here.
 
-- **TypeScript build failures**  
-  Run `npm run build` and address reported type errors before deploying.
+**TypeScript build failures**
+Run `npm run build` and address reported type errors before deploying.
 
 ## Deployment
 
-1. Create a production build:
+Create a production build:
 
-   ```bash
-   npm run build
-   ```
+```bash
+npm run build
+```
 
-2. Validate locally:
+Validate locally:
 
-   ```bash
-   npm run preview
-   ```
+```bash
+npm run preview
+```
 
-3. Deploy the generated `dist/` folder to your hosting provider (for example Vercel, Netlify, or Cloudflare Pages).
+Currently deployed on [Vercel](https://vercel.com), building from the `main` branch of
+this repository. To deploy your own copy:
+
+```bash
+npx vercel login
+npx vercel --prod
+```
+
+Or deploy the generated `dist/` folder to any static host (Netlify, Cloudflare Pages, etc.).
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [MIT License](LICENSE), derived from
+the original template by Rajesh Chityal.
